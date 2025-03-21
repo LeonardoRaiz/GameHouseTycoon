@@ -1,0 +1,71 @@
+# Unity Generated Files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# User-specific settings
+UserSettings/
+
+# IDEs and editors
+.vscode/
+*.code-workspace
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.suo
+*.user
+*.booproj
+*.svd
+*.pdb
+
+# Cache e configurações do Unity
+*.bak
+*.unitypackage
+*.meta
+*.DS_Store
+.DS_Store?
+
+# Arquivos do Visual Studio
+.vs/
+*.csproj
+*.sln
+*.exe
+*.dll
+*.mdb
+
+# Arquivos do MacOS
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*.lock
+*.tmproj
+Thumbs.db
+
+# Diretório de builds (se você quiser ignorar)
+Builds/
+
+# Player logs e crash reports
+Player.log
+Player-prev.log
+Crashes/
+
+# Arquivos do Unity Collaborate
+Collab/
+
+# Arquivos de pacotes Unity
+Packages/com.unity.*
+
+# Ignorar Assets/Plugins não gerenciados (se aplicável)
+Assets/Plugins/*/lib/
+Assets/Plugins/*/bin/
+Assets/Plugins/*/obj/
+
+# Git LFS (opcional, caso use)
+#*.psd filter=lfs diff=lfs merge=lfs -text
+#*.png filter=lfs diff=lfs merge=lfs -text
