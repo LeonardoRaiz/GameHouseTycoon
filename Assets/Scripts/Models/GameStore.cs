@@ -8,13 +8,15 @@ namespace Models
         public int StoreCount { get; private set; }
         public float RevenuePerStore { get; private set; }
         public string Image { get; set; }
+        public float PriceHour { get; set; }
 
-        public GameStore(string name, int initialCount, float revenuePerStore, string image)
+        public GameStore(string name, int initialCount, float revenuePerStore, string image, float priceHour)
         {
             Name = name;
             StoreCount = initialCount;
             RevenuePerStore = revenuePerStore;
             Image = image;
+            PriceHour = priceHour;
         }
 
         public void SetStoreCount(int count)

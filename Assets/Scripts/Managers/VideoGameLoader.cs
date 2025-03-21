@@ -32,19 +32,29 @@ namespace Managers
         }
 
         void SpawnGameStore(VideoGameData gameData)
-        {
+        { 
             if (storeContainer.childCount >= 6)
             {
-                DebugHelper.Error("Limite máximo de GamaStore atingido!");
+                DebugHelper.Error("Limite máximo de GameStore atingido!");
                 return;
             }
-            
+
+            float storeCost = gameData.basePrice;
+
+            if (GameEconomyManager.Instance.GetCurrentMoney() < storeCost)
+            {
+                DebugHelper.Warn($"Dinheiro insuficiente para comprar {gameData.name}!");
+                return;
+            }
+
+            GameEconomyManager.Instance.SpendMoneyUI(storeCost);
+
             GameObject newStore = Instantiate(gameStorePrefab, storeContainer);
             GameStoreManager storeManager = newStore.GetComponent<GameStoreManager>();
-            
+
             if (storeManager != null)
             {
-                storeManager.InitializeGameStore(gameData.name, 1, gameData.basePrice, gameData.image);
+                storeManager.InitializeGameStore(gameData.name, 1, gameData.basePrice, gameData.image, gameData.priceHour);
             }
             else
             {

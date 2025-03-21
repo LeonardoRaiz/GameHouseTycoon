@@ -59,6 +59,8 @@ namespace Controllers
                     DebugHelper.Warn($"Filho 'ImageContainer' não encontrado no botão de {game.name}");
                 }
 
+                buttonObj.GetComponentInChildren<Button>().GetComponentInChildren<TextMeshProUGUI>().text =
+                    $"Comprar\n{game.basePrice}";
                 buttonObj.GetComponentInChildren<Button>().onClick.AddListener(() => _onGameSelected(game));
             }
         }

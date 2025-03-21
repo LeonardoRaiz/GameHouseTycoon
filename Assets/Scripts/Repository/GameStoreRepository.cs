@@ -8,9 +8,9 @@ namespace Repository
     {
         private readonly GameStore _gameStore;
 
-        public GameStoreRepository(string name, int initialCount, float revenuePerStore, string image)
+        public GameStoreRepository(string name, int initialCount, float revenuePerStore, string image, float priceHour)
         {
-            _gameStore = new GameStore(name, initialCount, revenuePerStore, image);
+            _gameStore = new GameStore(name, initialCount, revenuePerStore, image, priceHour);
         }
 
         public GameStore GetStore()
