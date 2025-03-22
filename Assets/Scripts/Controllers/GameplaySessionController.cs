@@ -6,7 +6,6 @@ namespace Controllers
     public class GameplaySessionController
     {
         private readonly IGameplaySessionRepository _repository;
-        private bool _isActive = false;
 
         public GameplaySessionController(IGameplaySessionRepository repository)
         {
@@ -17,18 +16,18 @@ namespace Controllers
         {
             _repository.SetTotalTime(duration);
             _repository.SetCurrentTime(0);
-            _isActive = true;
+            _repository.SetSessionActive(true);
         }
 
         public void CancelSession()
         {
-            _isActive = false;
+            _repository.SetSessionActive(false);
             _repository.SetCurrentTime(0);
         }
 
         public void UpdateSession(float deltaTime)
         {
-            if (!_isActive) return;
+            if (!_repository.GetSessionActive()) return;
 
             float current = _repository.GetCurrentTime();
             float total = _repository.GetTotalTime();
@@ -38,7 +37,7 @@ namespace Controllers
 
             if (current >= total)
             {
-                _isActive = false;
+                _repository.SetSessionActive(false);
             }
         }
 
@@ -55,12 +54,12 @@ namespace Controllers
 
         public bool IsSessionComplete()
         {
-            return !_isActive && _repository.GetCurrentTime() >= _repository.GetTotalTime();
+            return !_repository.GetSessionActive() && _repository.GetCurrentTime() >= _repository.GetTotalTime();
         }
 
         public bool IsSessionActive()
         {
-            return _isActive;
+            return _repository.GetSessionActive();
         }
     }
 }

@@ -4,6 +4,7 @@ namespace Models
     {
         public float TotalTime { get; set; }
         public float CurrentTime { get; set; }
+        public bool IsActive { get; set; }
 
         public GameplaySession(float totalTime)
         {

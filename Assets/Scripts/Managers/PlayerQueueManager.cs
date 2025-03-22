@@ -146,5 +146,10 @@ namespace Managers
         {
             return _controller.GetQueueSizeForStore(storeName);
         }
+
+        public PlayerRequest PeekNextRequest(string storeName)
+        {
+            return _controller.PeekNextRequest(storeName);
+        }
     }
 }

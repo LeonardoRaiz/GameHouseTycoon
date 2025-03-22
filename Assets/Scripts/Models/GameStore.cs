@@ -9,6 +9,7 @@ namespace Models
         public float RevenuePerStore { get; private set; }
         public string Image { get; set; }
         public float PriceHour { get; set; }
+        public float TotalGames { get; set; }
 
         public GameStore(string name, int initialCount, float revenuePerStore, string image, float priceHour)
         {
@@ -26,7 +27,7 @@ namespace Models
 
         public float CalculateTotalRevenue()
         {
-            return StoreCount * RevenuePerStore;
+            return TotalGames + RevenuePerStore;
         }
     }
 }

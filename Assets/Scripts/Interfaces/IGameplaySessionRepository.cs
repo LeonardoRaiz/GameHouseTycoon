@@ -8,5 +8,7 @@ namespace Interfaces
         float GetCurrentTime();
         void SetTotalTime(float time);
         void SetCurrentTime(float time);
+        void SetSessionActive(bool isActive);
+        bool GetSessionActive();
     }
 }

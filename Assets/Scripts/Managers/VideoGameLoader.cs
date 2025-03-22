@@ -1,14 +1,12 @@
 using Log;
-
+using Controllers;
+using Interfaces;
+using Repository;
+using Models;
+using UnityEngine;
 
 namespace Managers
 {
-    using Controllers;
-    using Interfaces;
-    using Repository;
-    using Models;
-    using UnityEngine;
-
     public class VideoGameLoader : MonoBehaviour
     {
         [SerializeField] private GameObject buttonPrefab;
@@ -21,8 +19,9 @@ namespace Managers
         void Start()
         {
             IVideoGameRepository repository = new VideoGameRepository();
+            var games = repository.LoadVideoGames();
             _videoGameController = new VideoGameController(repository, buttonContainer, buttonPrefab, OnVideoGameSelected);
-            _videoGameController.CreateButtons();
+            _videoGameController.InitializeButtons(games);
         }
 
         void OnVideoGameSelected(VideoGameData selectedGame)
@@ -32,7 +31,7 @@ namespace Managers
         }
 
         void SpawnGameStore(VideoGameData gameData)
-        { 
+        {
             if (storeContainer.childCount >= 6)
             {
                 DebugHelper.Error("Limite máximo de GameStore atingido!");
@@ -60,6 +59,11 @@ namespace Managers
             {
                 DebugHelper.Error("GameStoreManager não encontrado no prefab!");
             }
+        }
+
+        public void NotifyPlayerServed()
+        {
+            _videoGameController.NotifyPlayerServed();
         }
     }
 }

@@ -17,5 +17,8 @@ namespace Repository
 
         public void SetTotalTime(float time) => _session.TotalTime = time;
         public void SetCurrentTime(float time) => _session.CurrentTime = time;
+        public void SetSessionActive(bool isActive) => _session.IsActive = isActive;
+        public bool GetSessionActive() => _session.IsActive;
+
     }
 }

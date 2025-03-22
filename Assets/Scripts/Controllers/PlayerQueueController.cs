@@ -23,7 +23,7 @@ namespace Controllers
             return _repository.Dequeue(storeName);
         }
 
-        public PlayerRequest PeekNextPlayerForStore(string storeName)
+        public PlayerRequest PeekNextRequest(string storeName)
         {
             return _repository.Peek(storeName);
         }

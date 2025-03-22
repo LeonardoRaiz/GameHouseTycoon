@@ -19,6 +19,21 @@ namespace Log
         {
             Debug.LogError($"<color=#FF0000>[ERROR]</color>{message}");
         }
+        
+        public static void LogController(string message, string controller)
+        {
+            Debug.Log($"<color=#f3FF30>[DEBUG{controller.ToUpper()}]</color> {message}");
+        }
+
+        public static void WarnController(string message, string controller)
+        {
+            Debug.LogWarning($"<color=#FFA500>[WARNING{controller.ToUpper()}]</color> {message}");
+        }
+
+        public static void ErrorController(string message, string controller)
+        {
+            Debug.LogError($"<color=#FF15AD>[ERROR{controller.ToUpper()}]</color> {message}");
+        }
 #endif
     }
 }
