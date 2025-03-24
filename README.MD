@@ -2,7 +2,7 @@
   <img src="Assets/Resources/Props/Logo.png" alt="GameStore Tycoon" width="700"/>
 </p>
 
-<h1 align="center">GameStore Tycoon</h1>
+<h1 align="center">Game House Tycoon</h1>
 
 <p align="center">Um jogo de gerenciamento onde o jogador administra sua própria loja de videogames e evolui seu império conforme atende clientes e desbloqueia novas plataformas.</p>
 
@@ -10,7 +10,7 @@
 
 ## 🎮 Sobre o Projeto
 
-**GameStore Tycoon** é um jogo casual de gerenciamento em 2D que simula a rotina de uma loja de videogames. O jogador deve comprar novas plataformas, atender clientes, acumular receita e expandir seu negócio ao longo do tempo.
+**Game House Tycoon** é um jogo casual de gerenciamento em 2D que simula a rotina de uma loja de videogames. O jogador deve comprar novas plataformas, atender clientes, acumular receita e expandir seu negócio ao longo do tempo.
 
 <p align="center" style="margin-top: 10px">
   <img src="Assets/Resources/Props/screenshot.png" alt="player" width="700"/>
