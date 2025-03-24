@@ -5,65 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="578bc15c-3217-481c-88cd-93c02f877ca7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TycoonMindGG.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Font/Gampolins demo SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Font/Gampolins demo.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/nes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/ps1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/ps2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/ps4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/snes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/wii.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/xbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Card.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/GameStoreCard.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player2.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/UnlockNotificationPrefab.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/coin.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/BackMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Ballon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Card 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/CardContainer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/InfoGameUI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/MoneyUI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Player1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Player2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/Player3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/UnlockCard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Props/coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/background.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/coin.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/payout.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameInfoController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameSoundController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameInfoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IGameSoundRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameInfoManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSoundManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameInfoMessage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Models/GameSoundData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Repository/GameInfoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Repository/GameSoundRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameStoreCard.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Font/Ultra Cream SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Font/Ultra Cream SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Imagens/atari.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Imagens/atari.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameEconomyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameEconomyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/VideoGameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/VideoGameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataJSON/videogames.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataJSON/videogames.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEconomyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEconomyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameStoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameStoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerQueueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerQueueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +31,16 @@
   "associatedIndex": 5
 }]]></component>
   <component name="ProjectId" id="2uluHNqtj9fVh7sYN40OII2WQRk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -123,11 +69,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742835394236</updated>
-      <workItem from="1742835395411" duration="611000" />
+      <workItem from="1742835395411" duration="932000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

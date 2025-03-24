@@ -1,5 +1,5 @@
 <p align="center" style="margin-top: 10px">
-  <img src="Assets/Resources/Props/logo.png" alt="GameStore Tycoon" width="700"/>
+  <img src="Assets/Resources/Props/Logo.png" alt="GameStore Tycoon" width="700"/>
 </p>
 
 <h1 align="center">GameStore Tycoon</h1>
