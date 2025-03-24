@@ -4,7 +4,7 @@ namespace Log
 {
     public static class DebugHelper 
     {
-#if UNITY_EDITOR
+
         public static void Log(string message)
         {
             Debug.Log($"<color=#00FF00>[DEBUG]</color> {message}");
@@ -34,6 +34,6 @@ namespace Log
         {
             Debug.LogError($"<color=#FF15AD>[ERROR{controller.ToUpper()}]</color> {message}");
         }
-#endif
+
     }
 }

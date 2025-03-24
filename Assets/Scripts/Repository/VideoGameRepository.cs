@@ -1,38 +1,53 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using Interfaces;
-using Log;
 using Models;
 using UnityEngine;
+using System;
+using UnityEngine.Networking;
 
 namespace Repository
 {
     public class VideoGameRepository : IVideoGameRepository
     {
-        private readonly string _filePath = Path.Combine(Application.dataPath, "Scripts", "DataJSON", "videogames.json");
+        private const string JsonFileName = "videogames.json";
+        private List<VideoGameData> _videoGames = new();
 
-        public List<VideoGameData> LoadVideoGames()
+        public void LoadVideoGamesAsync(Action<List<VideoGameData>> onLoaded)
         {
-            if (File.Exists(_filePath))
-            {
-                string jsonData = File.ReadAllText(_filePath);
-                VideoGameList gameList = JsonUtility.FromJson<VideoGameList>("{\"videoGames\":" + jsonData + "}");
+            CoroutineRunner.Run(LoadFromStreamingAssets(onLoaded));
+        }
 
-                if (gameList != null && gameList.videoGames.Length > 0)
-                {
-                    return new List<VideoGameData>(gameList.videoGames);
-                }
-                else
-                {
-                    DebugHelper.Error("JSON carregado, mas não contém dados válidos.");
-                }
-            }
-            else
-            {
-                DebugHelper.Error("Arquivo JSON não encontrado!");
-            }
-    
-            return new List<VideoGameData>();
+        private IEnumerator LoadFromStreamingAssets(Action<List<VideoGameData>> onLoaded)
+        {
+            string path = System.IO.Path.Combine(Application.streamingAssetsPath, JsonFileName);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+    UnityWebRequest request = UnityWebRequest.Get(path);
+    yield return request.SendWebRequest();
+
+    if (request.result != UnityWebRequest.Result.Success)
+    {
+        Debug.LogError($"[ERROR] Erro ao carregar JSON: {request.error}");
+        yield break;
+    }
+
+    string jsonContent = request.downloadHandler.text;
+#else
+            string jsonContent = System.IO.File.ReadAllText(path);
+            yield return null;
+#endif
+
+            VideoGameList videoGameList = JsonUtility.FromJson<VideoGameList>(jsonContent);
+            _videoGames = videoGameList.games;
+            onLoaded?.Invoke(_videoGames);
+
+            yield break; 
+        }
+
+        public List<VideoGameData> GetAllVideoGames()
+        {
+            return _videoGames;
         }
     }
 }

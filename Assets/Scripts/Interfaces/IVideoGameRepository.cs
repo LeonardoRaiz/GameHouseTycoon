@@ -1,10 +1,12 @@
+using System;
+using System.Collections.Generic;
+using Models;
+
 namespace Interfaces
 {
-    using System.Collections.Generic;
-    using Models;
-
     public interface IVideoGameRepository
     {
-        List<VideoGameData> LoadVideoGames();
+        void LoadVideoGamesAsync(Action<List<VideoGameData>> onLoaded);
+        List<VideoGameData> GetAllVideoGames();
     }
 }

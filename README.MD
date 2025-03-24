@@ -78,6 +78,7 @@ As artes foram produzidas especialmente para o jogo, mantendo um visual estiliza
 <p align="center" style="margin-top: 10px">
   <img src="Assets/Resources/Props/MoneyUI.png" alt="player" width="300"/>
 </p>
+
 ---
 
 ## ⚙️ Mecânicas e Funcionalidades
@@ -102,3 +103,7 @@ As artes foram produzidas especialmente para o jogo, mantendo um visual estiliza
    ```
 2. Abra o projeto no Unity (versão recomendada: 2022.3 LTS ou superior).
 3. Execute a cena MainMenu.unity.
+
+---
+## 🏠 Play on Itch.io
+- Jogue aqui: https://leonardoraiz.itch.io/game-house-tycoon

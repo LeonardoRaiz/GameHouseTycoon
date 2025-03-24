@@ -1,15 +1,8 @@
-namespace Models
+using System.Collections.Generic;
+using Models;
+
+[System.Serializable]
+public class VideoGameList
 {
-    using UnityEngine;
-
-    [System.Serializable]
-    public class VideoGameList
-    {
-        public VideoGameData[] videoGames;
-
-        public static VideoGameList FromJson(string json)
-        {
-            return JsonUtility.FromJson<VideoGameList>("{\"videoGames\":" + json + "}");
-        }
-    }
+    public List<VideoGameData> games;
 }

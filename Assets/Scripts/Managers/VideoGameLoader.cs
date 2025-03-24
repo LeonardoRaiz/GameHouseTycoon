@@ -19,9 +19,11 @@ namespace Managers
         void Start()
         {
             IVideoGameRepository repository = new VideoGameRepository();
-            var games = repository.LoadVideoGames();
-            _videoGameController = new VideoGameController(repository, buttonContainer, buttonPrefab, OnVideoGameSelected);
-            _videoGameController.InitializeButtons(games);
+            repository.LoadVideoGamesAsync(games =>
+            {
+                _videoGameController = new VideoGameController(repository, buttonContainer, buttonPrefab, OnVideoGameSelected);
+                _videoGameController.InitializeButtons(games);
+            });
         }
 
         void OnVideoGameSelected(VideoGameData selectedGame)
