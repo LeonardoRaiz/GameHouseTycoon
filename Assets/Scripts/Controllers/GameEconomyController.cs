@@ -1,5 +1,6 @@
 using Interfaces;
 using Log;
+using Managers;
 
 namespace Controllers
 {
@@ -26,6 +27,7 @@ namespace Controllers
         public void AddMoney(float amount)
         {
             _repository.GetEconomy().CurrentMoney += amount;
+            GameSoundManager.Instance?.PlaySound("Sounds/payout");
             DebugHelper.Log($"+${amount} adicionados. Total: ${GetMoney()}");
         }
 
@@ -36,6 +38,7 @@ namespace Controllers
             if (economy.CurrentMoney >= amount)
             {
                 economy.CurrentMoney -= amount;
+                GameSoundManager.Instance?.PlaySound("Sounds/coin");
                 DebugHelper.Log($"-${amount} gastos. Total: ${GetMoney()}");
                 return true;
             }

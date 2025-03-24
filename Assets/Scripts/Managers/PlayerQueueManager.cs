@@ -7,6 +7,7 @@ using Log;
 using Models;
 using Repository;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -21,6 +22,7 @@ namespace Managers
         [SerializeField] private float spacing = 1.5f;
         [SerializeField] private float spawnInterval = 5f;
         [SerializeField] private int maxQueueSize = 5;
+        [SerializeField] private Sprite[] playerSprites; 
 
         private PlayerQueueController _controller;
         private List<GameObject> _visualQueue = new();
@@ -80,6 +82,12 @@ namespace Managers
 
             GameObject visual = Instantiate(playerPrefab, spawnPoint.position, Quaternion.identity, queueContainer);
             visual.GetComponentInChildren<TextMeshProUGUI>().text = desiredStoreName;
+            Image img = visual.GetComponentInChildren<Image>();
+            if (img != null && playerSprites.Length > 0)
+            {
+                Sprite randomSprite = playerSprites[Random.Range(0, playerSprites.Length)];
+                img.sprite = randomSprite;
+            }
             visual.GetComponent<PlayerTag>().desiredStoreName = desiredStoreName;
 
             Vector3 targetPos = queuePoint.position + Vector3.down * spacing * _visualQueue.Count;

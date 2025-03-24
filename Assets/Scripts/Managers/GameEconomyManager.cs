@@ -58,7 +58,7 @@ namespace Managers
 
         private void UpdateUI()
         {
-            moneyText.text = $"Dinheiro: ${_economyController.GetMoney():0.00}";
+            moneyText.text = $"R$:{_economyController.GetMoney():0.00}";
         }
     }
 }

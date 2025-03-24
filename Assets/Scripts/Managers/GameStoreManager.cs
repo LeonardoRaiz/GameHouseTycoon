@@ -18,6 +18,9 @@ namespace Managers
         [SerializeField] private Image imageGameStore;
         [SerializeField] private Slider sessionSlider;
         [SerializeField] private Button startSessionButton;
+        
+        [Header("Coin Effect")]
+        [SerializeField] private GameObject coinPrefab;
 
         private GameStoreController _gameStoreController;
         private GameplaySessionController _sessionController;
@@ -49,6 +52,7 @@ namespace Managers
         {
             if (_sessionController.IsSessionActive())
             {
+                GameInfoManager.Instance?.ShowMessage($"Não é possível vender {_gameStoreController.GetStore().Name} durante uma sessão!", 2f);
                 DebugHelper.Warn($"Não é possível vender {_gameStoreController.GetStore().Name} durante uma sessão!");
                 return;
             }
@@ -69,12 +73,14 @@ namespace Managers
 
             if (nextPlayer == null)
             {
-                DebugHelper.Warn($"Nenhum jogador na fila para a loja {storeName}.");
+                GameInfoManager.Instance?.ShowMessage($"Nenhum jogador na fila para o video game: {storeName}.", 4f);
+                DebugHelper.Warn($"Nenhum jogador na fila para video game: {storeName}.");
                 return;
             }
 
             if (nextPlayer.DesiredStore != storeName)
             {
+                GameInfoManager.Instance?.ShowMessage($"Jogador quer jogar em {nextPlayer.DesiredStore}, não em {storeName}.", 4f);
                 DebugHelper.Warn($"Jogador quer jogar em {nextPlayer.DesiredStore}, não em {storeName}.");
                 return;
             }
@@ -86,6 +92,7 @@ namespace Managers
 
             PlayerQueueManager.Instance.GetNextRequest(storeName); 
             DebugHelper.Log($"Sessão iniciada para {storeName}. Jogador atendido: {nextPlayer.DesiredStore}");
+            GameInfoManager.Instance?.ShowMessage($"Sessão iniciada para {storeName}.", 4f);
         }
 
         public void InitializeGameStore(string name, int count, float revenue, string image, float priceHour)
@@ -117,10 +124,15 @@ namespace Managers
             float hours = _sessionController.GetPlayedHours();
             float revenue = _gameStoreController.GetStore().PriceHour;
             float total = revenue * hours * _gameStoreController.GetStore().StoreCount;
+
             VideoGameLoader loader = FindObjectOfType<VideoGameLoader>();
             loader?.NotifyPlayerServed();
+
             GameEconomyManager.Instance.AddMoneyUI(total);
             DebugHelper.Log($"+R${total:0.00} ganhos após {hours}h de jogatina!");
+            GameInfoManager.Instance?.ShowMessage($"+R${total:0.00} ganhos após {hours}h de jogatina!", 2f);
+
+            PlayCoinEffect();
 
             startSessionButton.interactable = true;
             
@@ -154,6 +166,58 @@ namespace Managers
         {
             int[] options = { 10, 30, 60 }; 
             return options[Random.Range(0, options.Length)];
+        }
+        
+        private void PlayCoinEffect()
+        {
+            if (coinPrefab == null || sessionSlider == null)
+            {
+                DebugHelper.Warn("Coin effect: campos não atribuídos.");
+                return;
+            }
+
+            Transform handle = sessionSlider.handleRect;
+            if (handle == null)
+            {
+                DebugHelper.Warn("Slider sem handleRect definido.");
+                return;
+            }
+            
+            GameObject moneyTextObj = GameObject.Find("CurrentBalanceImage");
+            if (moneyTextObj == null)
+            {
+                DebugHelper.Warn("Objeto 'MoneyText' não encontrado!");
+                return;
+            }
+
+            RectTransform target = moneyTextObj.GetComponent<RectTransform>();
+            if (target == null)
+            {
+                DebugHelper.Warn("RectTransform não encontrado em 'MoneyText'.");
+                return;
+            }
+
+            GameObject coin = Instantiate(coinPrefab, handle.position, Quaternion.identity, GameObject.Find("UI Canvas").transform);
+            RectTransform coinRect = coin.GetComponent<RectTransform>();
+
+            StartCoroutine(MoveCoinToTarget(coinRect, target.position));
+        }
+
+        private System.Collections.IEnumerator MoveCoinToTarget(RectTransform coin, Vector3 target)
+        {
+            float duration = 0.6f;
+            float elapsed = 0f;
+            Vector3 start = coin.position;
+
+            while (elapsed < duration)
+            {
+                coin.position = Vector3.Lerp(start, target, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            coin.position = target;
+            Destroy(coin.gameObject);
         }
         
     }

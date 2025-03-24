@@ -16,7 +16,7 @@ namespace Controllers
         private readonly System.Action<VideoGameData> _onGameSelected;
 
         private int playersServed = 0;
-        private int unlockThreshold = 5;
+        private int unlockThreshold = 1;
         private int currentUnlockedIndex = 0;
 
         private List<VideoGameData> _allVideoGames;
@@ -46,6 +46,30 @@ namespace Controllers
 
                 DebugHelper.LogController($"Novo videogame desbloqueado: {game.name}", "VideoGameController");
 
+
+                GameObject prefab = Resources.Load<GameObject>("Prefabs/UnlockNotificationPrefab");
+                if (prefab != null)
+                {
+                    GameObject notification = Object.Instantiate(prefab, GameObject.Find("UI Canvas").transform); 
+                    notification.SetActive(true);
+
+                    var nameText = notification.transform.Find("NameText")?.GetComponent<TextMeshProUGUI>();
+                    var iconImage = notification.transform.Find("Icon")?.GetComponent<Image>();
+
+                    if (nameText != null) nameText.text = game.name.ToUpper();
+                    if (iconImage != null)
+                    {
+                        Sprite sprite = Resources.Load<Sprite>(game.image);
+                        if (sprite != null) iconImage.sprite = sprite;
+                    }
+
+                    Object.Destroy(notification, 4f);
+                }
+                else
+                {
+                    DebugHelper.WarnController("Prefab de notificação não encontrado!", "VideoGameController");
+                }
+
                 currentUnlockedIndex++;
             }
         }
@@ -56,27 +80,33 @@ namespace Controllers
             
             var nameText = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
             if (nameText != null)
-                nameText.text = game.name;
+                nameText.text = game.name.ToUpper(); 
             
-            Transform iconTransform = buttonObj.transform.Find("ImageVideoGame");
-            if (iconTransform != null)
+            var imageComponents = buttonObj.GetComponentsInChildren<Image>(true);
+            foreach (var img in imageComponents)
             {
-                Image image = iconTransform.GetComponent<Image>();
-                if (image != null)
+                if (img.gameObject.name == "ImageVideoGame")
                 {
                     Sprite sprite = Resources.Load<Sprite>(game.image);
                     if (sprite != null)
-                        image.sprite = sprite;
+                    {
+                        img.sprite = sprite;
+                    }
                     else
+                    {
                         DebugHelper.WarnController($"Sprite não encontrado para: {game.image}", "VideoGameController");
+                    }
                 }
             }
-            
+
+            // Botão e preço
             var button = buttonObj.GetComponentInChildren<Button>();
             if (button != null)
             {
                 button.onClick.AddListener(() => _onGameSelected(game));
-                button.GetComponentInChildren<TextMeshProUGUI>().text = $"Comprar\n{game.basePrice}";
+                var priceText = button.GetComponentInChildren<TextMeshProUGUI>();
+                if (priceText != null)
+                    priceText.text = $"Comprar\n{game.basePrice}";
             }
         }
 

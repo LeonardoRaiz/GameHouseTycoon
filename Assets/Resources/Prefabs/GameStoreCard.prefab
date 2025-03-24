@@ -1257,6 +1257,7 @@ MonoBehaviour:
   imageGameStore: {fileID: 1217124049827497515}
   sessionSlider: {fileID: 3630762684504022038}
   startSessionButton: {fileID: 4601539596086711582}
+  coinPrefab: {fileID: 912910893523959149, guid: 161700a4d6d554e24ac1e9d1df1d459c, type: 3}
 --- !u!1 &7026555227284011482
 GameObject:
   m_ObjectHideFlags: 0

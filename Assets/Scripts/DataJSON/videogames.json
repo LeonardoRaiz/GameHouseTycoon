@@ -1,10 +1,10 @@
 [
   { "name": "Atari 2600", "year": 1977, "basePrice": 300.0, "image": "Imagens/atari", "priceHour": 5.50 },
-  { "name": "NES", "year": 1983, "basePrice": 250.0, "image": "Imagens/nes.png", "priceHour": 5.0 },
-  { "name": "SNES", "year": 1990, "basePrice": 200.0, "image": "Imagens/snes.png", "priceHour": 5.0 },
-  { "name": "PlayStation 1", "year": 1994, "basePrice": 180.0, "image": "Imagens/ps1.png", "priceHour": 5.0 },
-  { "name": "PlayStation 2", "year": 2000, "basePrice": 150.0, "image": "Imagens/ps2.png", "priceHour": 5.0 },
-  { "name": "Xbox", "year": 2001, "basePrice": 140.0, "image": "Imagens/xbox.png", "priceHour": 5.0 },
-  { "name": "Nintendo Wii", "year": 2006, "basePrice": 100.0, "image": "Imagens/wii.png", "priceHour": 5.0 },
-  { "name": "PlayStation 4", "year": 2013, "basePrice": 50.0, "image": "Imagens/ps4.png", "priceHour": 5.0 }
+  { "name": "NES", "year": 1983, "basePrice": 250.0, "image": "Imagens/nes", "priceHour": 5.0 },
+  { "name": "SNES", "year": 1990, "basePrice": 200.0, "image": "Imagens/snes", "priceHour": 5.0 },
+  { "name": "PlayStation 1", "year": 1994, "basePrice": 180.0, "image": "Imagens/ps1", "priceHour": 5.0 },
+  { "name": "PlayStation 2", "year": 2000, "basePrice": 150.0, "image": "Imagens/ps2", "priceHour": 5.0 },
+  { "name": "Xbox", "year": 2001, "basePrice": 140.0, "image": "Imagens/xbox", "priceHour": 5.0 },
+  { "name": "Nintendo Wii", "year": 2006, "basePrice": 100.0, "image": "Imagens/wii", "priceHour": 5.0 },
+  { "name": "PlayStation 4", "year": 2013, "basePrice": 50.0, "image": "Imagens/ps4", "priceHour": 5.0 }
 ]
